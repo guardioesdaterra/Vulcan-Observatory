@@ -77,7 +77,8 @@ nav a{text-decoration:none}
 .gal{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:4vh}.gal img{width:100%;height:30vh;object-fit:cover}
 .legend{display:grid;grid-template-columns:1fr 1fr;gap:1vh 4vw;margin-top:3vh;font-size:.95rem}
 .legend p{border-top:1px solid #000;padding-top:1vh}
-.al{display:grid;grid-template-columns:5.5rem 1fr 2rem;gap:1rem;align-items:baseline;border-top:2px solid #000;padding:2.6vh 0;text-decoration:none;margin-top:0}.al:first-of-type{margin-top:2vh}.al b{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.3rem,2.4vw,2.4rem);letter-spacing:-.02em;line-height:1.1}.al i{font-style:normal;font-size:1.6rem;transition:transform .3s}.al:hover{background:#000;color:#fff}.al:hover b{transform:translateX(1rem)}.al b{transition:transform .3s}.al:hover i{transform:translate(4px,-4px)}.al{transition:padding .3s,background .3s}
+.al{display:grid;grid-template-columns:5.5rem 1fr 2rem;gap:1rem;align-items:baseline;border-top:2px solid #000;padding:2.6vh 0;text-decoration:none;margin-top:0;cursor:pointer}.al:first-of-type{margin-top:2vh}.al b{font-family:Georgia,serif;font-weight:400;font-size:clamp(1.3rem,2.4vw,2.4rem);letter-spacing:-.02em;line-height:1.1}.al i{font-style:normal;font-size:1.6rem;transition:transform .3s}.al:hover{background:#000;color:#fff}.al:hover b{transform:translateX(1rem)}.al b{transition:transform .3s}.al:hover i{transform:translate(4px,-4px)}.al{transition:padding .3s,background .3s}
+.apanel{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:60;display:none;place-items:flex-start;padding:8vh 6vw;color:#fff;overflow-y:auto}.apanel:target,.apanel[style*="display:block"],.apanel[style*="display:flex"]{display:flex}.aclose{position:absolute;top:3vh;right:4vw;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer;padding:0;line-height:1}.aclose:hover{opacity:.6}.acontent{max-width:72ch;margin-top:6vh}.acontent h3{font-size:clamp(2rem,4vw,4rem);font-weight:400;margin-bottom:1.5vh;line-height:1}.acontent p{line-height:1.6;margin-bottom:2vh;font-size:1.05rem;max-width:60ch}.acontent #apmeta{margin:2vh 0;font-size:.85rem;opacity:.8;line-height:1.6}.acontent .btn{margin-top:1vh}.aplist .cols{grid-template-columns:repeat(3,1fr);gap:2vw}
 #cur{width:84px;height:84px;border:0;background:#fff;transform:none}
 #dot{position:fixed;left:0;top:0;width:8px;height:8px;border-radius:50%;background:#fff;mix-blend-mode:difference;pointer-events:none;z-index:61}
 #trail{position:fixed;inset:0;pointer-events:none;z-index:58;mix-blend-mode:difference}
@@ -308,13 +309,61 @@ footer p{max-width:72ch;line-height:1.6;margin-bottom:1.6vh;font-size:.95rem}
  <div class="num mono"><b>08</b>Allies</div>
  <h2 class="serif" style="margin-top:6vh">Reached &amp; <span class="it">together</span></h2>
  <div class="cols">
-  <div><span class="mono">Governmental entities reached</span>
-   <a class="al" href="https://www.gov.br/cultura/" target="_blank" rel="noopener"><span class="mono">Federal</span><b>Ministério da Cultura · MinC</b><i>↗</i></a>
-   <a class="al" href="https://www.gov.br/mda/pt-br" target="_blank" rel="noopener"><span class="mono">Federal</span><b>Ministério do Desenvolvimento Agrário e Agricultura Familiar · MDA</b><i>↗</i></a></div>
-  <div><span class="mono">Partner entities</span>
-   <a class="al" href="https://aguasdapratasos.wixstudio.com/2025" target="_blank" rel="noopener"><span class="mono">Partner</span><b>SOS Águas da Prata</b><i>↗</i></a>
-   <a class="al" href="https://guardioesdaterra.github.io/nanci-ferreira" target="_blank" rel="noopener"><span class="mono">Partner</span><b>Kintal da Dita</b><i>↗</i></a>
-   <a class="al" href="https://instagram.com/_espaco.rizoma" target="_blank" rel="noopener"><span class="mono">Partner</span><b>Espaço Rizoma</b><i>↗</i></a></div>
+  <div>
+   <span class="mono" style="display:block;margin-bottom:1vh">Governmental entities reached</span>
+   <button class="al" data-p="minc"><span class="mono">Federal</span><b>Ministério da Cultura · MinC</b><i>↗</i></button>
+   <button class="al" data-p="mda"><span class="mono">Federal</span><b>Ministério do Desenvolvimento Agrário e Agricultura Familiar · MDA</b><i>↗</i></button>
+  </div>
+  <div>
+   <span class="mono" style="display:block;margin-bottom:1vh">Partner entities</span>
+   <button class="al" data-p="sos"><span class="mono">Partner</span><b>SOS Águas da Prata</b><i>↗</i></button>
+   <button class="al" data-p="kintal"><span class="mono">Partner</span><b>Kintal da Dita</b><i>↗</i></button>
+   <button class="al" data-p="rizoma"><span class="mono">Partner</span><b>Espaço Rizoma</b><i>↗</i></button>
+  </div>
+ </div>
+ <div class="aplist" style="margin-top:6vh">
+  <span class="mono" style="display:block;margin-bottom:1vh">All partners &amp; networks (click to mirror details)</span>
+  <div class="cols" style="margin-top:1vh">
+   <div>
+    <button class="al" data-p="aguas"><span class="mono">Local</span><b>Prefeitura Municipal · Águas da Prata</b><i>↗</i></button>
+    <button class="al" data-p="camara"><span class="mono">Local</span><b>Câmara Municipal · Águas da Prata</b><i>↗</i></button>
+    <button class="al" data-p="emeb"><span class="mono">School</span><b>EMEB Áurea Soares &amp; local schools</b><i>↗</i></button>
+    <button class="al" data-p="obras"><span class="mono">Local</span><b>SOS Serviço de Obras Sociais</b><i>↗</i></button>
+    <button class="al" data-p="bhumisparsha"><span class="mono">School</span><b>Bhumisparsha School</b><i>↗</i></button>
+    <button class="al" data-p="cascata"><span class="mono">Local</span><b>Associação Sócio Cultural da Cascata</b><i>↗</i></button>
+    <button class="al" data-p="santaclara"><span class="mono">Local</span><b>Sítio Santa Clara</b><i>↗</i></button>
+    <button class="al" data-p="planta"><span class="mono">NGO</span><b>ONG Planeta Plantar</b><i>↗</i></button>
+    <button class="al" data-p="oab"><span class="mono">Institution</span><b>OAB Environment Commission</b><i>↗</i></button>
+    <button class="al" data-p="luizgama"><span class="mono">Culture</span><b>Centro Cultural Luiz Gama</b><i>↗</i></button>
+   </div>
+   <div>
+    <button class="al" data-p="civica"><span class="mono">Movement</span><b>Círculo Vivencial Terra Viva</b><i>↗</i></button>
+    <button class="al" data-p="apabranca"><span class="mono">Movement</span><b>Aliança em Prol da APA da Pedra Branca</b><i>↗</i></button>
+    <button class="al" data-p="apib"><span class="mono">Indigenous</span><b>APIB</b><i>↗</i></button>
+    <button class="al" data-p="redeq"><span class="mono">Quilombola</span><b>Rede Quilombola</b><i>↗</i></button>
+    <button class="al" data-p="jaragua"><span class="mono">Indigenous</span><b>Guarani Village of Jaraguá</b><i>↗</i></button>
+    <button class="al" data-p="kiriri"><span class="mono">Indigenous</span><b>Kiriri Village (Caldas)</b><i>↗</i></button>
+    <button class="al" data-p="xucuru"><span class="mono">Indigenous</span><b>Xucuru-Kariri Village</b><i>↗</i></button>
+    <button class="al" data-p="terraviva"><span class="mono">Movement</span><b>Terra Viva / Água Rara</b><i>↗</i></button>
+    <button class="al" data-p="raravida"><span class="mono">Movement</span><b>Movimento Rara é a Vida</b><i>↗</i></button>
+    <button class="al" data-p="antinuclear"><span class="mono">Movement</span><b>Articulação Brasileira Antinuclear</b><i>↗</i></button>
+   </div>
+   <div>
+    <button class="al" data-p="mabmineracao"><span class="mono">Movement</span><b>Mov. Atingidos pela Mineração</b><i>↗</i></button>
+    <button class="al" data-p="mabbarragens"><span class="mono">Movement</span><b>Mov. Atingidos por Barragens</b><i>↗</i></button>
+    <button class="al" data-p="artistas"><span class="mono">Movement</span><b>Artistas Mineiros Antifascistas</b><i>↗</i></button>
+    <button class="al" data-p="greenpeace"><span class="mono">Movement</span><b>Greenpeace East SP</b><i>↗</i></button>
+    <button class="al" data-p="baque1"><span class="mono">Culture</span><b>Baque Mulher S.J. da Boa Vista</b><i>↗</i></button>
+    <button class="al" data-p="baque2"><span class="mono">Culture</span><b>Baque Mulher Poços de Caldas</b><i>↗</i></button>
+    <button class="al" data-p="baque3"><span class="mono">Culture</span><b>Baque Estrela do Oriente</b><i>↗</i></button>
+    <button class="al" data-p="ninja"><span class="mono">Media</span><b>Mídia Ninja</b><i>↗</i></button>
+    <button class="al" data-p="minasninja"><span class="mono">Media</span><b>Minas Ninja</b><i>↗</i></button>
+   </div>
+  </div>
+ </div>
+ <div id="apanel" class="apanel" role="dialog" aria-modal="true" aria-labelledby="aplabel" style="display:none">
+  <button class="aclose" id="aclose" aria-label="Close partner details">✕</button>
+  <div class="acontent" id="acontent"><h3 id="aplabel" class="serif"></h3><p id="apdesc"></p><div id="apmeta"></div><a class="btn" id="aplink" href="#" target="_blank" rel="noopener">Open partner page ↗</a></div>
  </div>
 </section>
 
@@ -547,6 +596,45 @@ function qf(){const t=qs.value.trim().toLowerCase();let n=0;items.forEach((d,i)=
 chipsOf($('qc'),['All',...new Set(QA.map(q=>q[0]))],x=>{cat=x;qf()});
 qs.addEventListener('input',qf);items.forEach(d=>d.addEventListener('toggle',()=>ScrollTrigger.refresh()));
 $('qall').onclick=()=>{open=!open;items.forEach(d=>{if(d.style.display!=='none')d.open=open});$('qall').textContent=open?'Collapse all':'Expand all'};qf();
+
+// partners detail panel
+const PARTNERS={
+ minc:{t:'Ministério da Cultura · MinC',cat:'Federal government',d:'Federal Ministry of Culture. Recognised Earth Guardians Brazil as a Ponto de Cultura and disbursed federal funding through São Paulo State calls for proposals, supporting the crew’s cultural and environmental work over more than a decade.',l:'https://www.gov.br/cultura/'},
+ mda:{t:'Ministério do Desenvolvimento Agrário e Agricultura Familiar · MDA',cat:'Federal government',d:'Ministry of Agrarian Development and Family Farming. Federal partner supporting the plateau’s communities, family farming and water security initiatives.',l:'https://www.gov.br/mda/pt-br'},
+ sos:{t:'SOS Águas da Prata',cat:'Partner entity',d:'Local socio-environmental organisation from Águas da Prata (SP). Born from the 2012–13 campaign against bauxite mining, it defends the region’s water, springs and hydromineral heritage.',l:'https://aguasdapratasos.wixstudio.com/2025'},
+ kintal:{t:'Kintal da Dita',cat:'Partner entity',d:'Cultural partner linked to the crew’s outreach and arts work in the region.',l:'https://guardioesdaterra.github.io/nanci-ferreira'},
+ rizoma:{t:'Espaço Rizoma',cat:'Partner entity',d:'Community and cultural space partner, supporting local gatherings, workshops and the Observatory’s cultural axis.',l:'https://instagram.com/_espaco.rizoma'},
+ aguas:{t:'Prefeitura Municipal da Estância Hidromineral de Águas da Prata',cat:'Local institution',d:'Municipal government of Águas da Prata; local partner and PNAB funding source for community initiatives.',l:null},
+ camara:{t:'Câmara Municipal de Águas da Prata',cat:'Local institution',d:'Municipal council of Águas da Prata; amended the Organic Law to make high-impact mining licensing harder after the 2012–13 victories.',l:null},
+ emeb:{t:'EMEB Áurea Soares and local schools',cat:'Schools & culture',d:'Local school and education network involved in the crew’s outreach and environmental education since 2015.',l:null},
+ obras:{t:'SOS Serviço de Obras Sociais de Águas da Prata',cat:'Local institution',d:'Social works service supporting community actions in Águas da Prata.',l:null},
+ bhumisparsha:{t:'Bhumisparsha School',cat:'Schools & culture',d:'Community school created with support from the Khyentse Foundation / Ashoka grant (2022), part of the crew’s education work.',l:null},
+ cascata:{t:'Associação Sócio Cultural da Cascata',cat:'Local institution',d:'Socio-cultural association partner from the region.',l:null},
+ santaclara:{t:'Sítio Santa Clara',cat:'Local institution',d:'Rural site and community partner on the plateau.',l:null},
+ planta:{t:'ONG Planeta Plantar',cat:'NGO',d:'Environmental NGO partner supporting reforestation and ecological actions.',l:null},
+ oab:{t:'OAB Environment Commission',cat:'Institution',d:'Brazilian Bar Association environment commission partner.',l:null},
+ luizgama:{t:'Centro Cultural Luiz Gama',cat:'Culture',d:'Cultural centre partner supporting arts and community events.',l:null},
+ civica:{t:'Círculo Vivencial Terra Viva',cat:'Movement',d:'Experiential circle linked to the Terra Viva / Água Rara agenda.',l:null},
+ apabranca:{t:'Aliança em Prol da APA da Pedra Branca',cat:'Movement',d:'Alliance defending the Pedra Branca Environmental Protection Area.',l:null},
+ apib:{t:'Articulação dos Povos Indígenas do Brasil (APIB)',cat:'Indigenous peoples',d:'National articulation of Indigenous peoples of Brazil; ally in defending territories and water.',l:null},
+ redeq:{t:'Rede Quilombola',cat:'Quilombola peoples',d:'Quilombola communities network partner.',l:null},
+ jaragua:{t:'Guarani Village of Jaraguá (São Paulo, SP)',cat:'Indigenous peoples',d:'Guarani Indigenous village ally in the São Paulo region.',l:null},
+ kiriri:{t:'Kiriri Village (Caldas, MG)',cat:'Indigenous peoples',d:'Kiriri Indigenous village on the Caldas plateau; directly affected by mining pressure.',l:null},
+ xucuru:{t:'Xucuru-Kariri Village',cat:'Indigenous peoples',d:'Xucuru-Kariri Indigenous village ally.',l:null},
+ terraviva:{t:'Terra Viva / Água Rara',cat:'Movements & networks',d:'Community agenda and network defending the volcanic plateau’s water and territories; core partner of the Observatory.',l:null},
+ raravida:{t:'Movimento Rara é a Vida',cat:'Movements & networks',d:'Rare-earths-affected communities movement.',l:null},
+ antinuclear:{t:'Articulação Brasileira Antinuclear',cat:'Movements & networks',d:'Brazilian anti-nuclear articulation ally.',l:null},
+ mabmineracao:{t:'Movimento dos Atingidos pela Mineração',cat:'Movements & networks',d:'Movement of people affected by mining.',l:null},
+ mabbarragens:{t:'Movimento dos Atingidos por Barragens',cat:'Movements & networks',d:'Movement of people affected by dams.',l:null},
+ artistas:{t:'Movimento dos Artistas Mineiros Antifascistas',cat:'Movements & networks',d:'Mineiros antifascist artists movement ally.',l:null},
+ greenpeace:{t:'Greenpeace East São Paulo volunteer group',cat:'Movements & networks',d:'Greenpeace volunteer group partner.',l:null},
+ baque1:{t:'Baque Mulher São João da Boa Vista',cat:'Maracatu & media',d:'Maracatu group and cultural partner.',l:null},
+ baque2:{t:'Baque Mulher Poços de Caldas',cat:'Maracatu & media',d:'Maracatu group and cultural partner.',l:null},
+ baque3:{t:'Baque Estrela do Oriente SJBV',cat:'Maracatu & media',d:'Maracatu group and cultural partner.',l:null},
+ ninja:{t:'Mídia Ninja',cat:'Maracatu & media',d:'Independent media collective partner.',l:null},
+ minasninja:{t:'Minas Ninja',cat:'Maracatu & media',d:'Minas Gerais independent media collective partner.',l:null}};
+const ap=$('apanel'),ac=$('acontent'),apl=$('aplabel'),apd=$('apdesc'),apm=$('apmeta'),apl2=$('aplink'),acl=$('aclose');
+document.querySelectorAll('.al').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.p;const p=PARTNERS[k];if(!p)return;apl.textContent=p.t;apd.textContent=p.d;apm.innerHTML='<span class="mono">'+p.cat+'</span>';if(p.l){apl2.href=p.l;apl2.style.display='inline-flex'}else{apl2.style.display='none'};ap.style.display='flex';gsap.fromTo(ap,{autoAlpha:0},{autoAlpha:1,duration:.3});document.body.style.overflow='hidden'}));acl.addEventListener('click',()=>{ap.style.display='none';gsap.to(ap,{autoAlpha:0,duration:.2});document.body.style.overflow=''});ap.addEventListener('click',e=>{if(e.target===ap){ap.style.display='none';gsap.to(ap,{autoAlpha:0,duration:.2});document.body.style.overflow=''}});addEventListener('keydown',e=>{if(e.key==='Escape'&&ap.style.display==='flex'){ap.style.display='none';gsap.to(ap,{autoAlpha:0,duration:.2});document.body.style.overflow=''}});
 
 // smooth nav + dot nav
 document.querySelectorAll('nav a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'})}));
